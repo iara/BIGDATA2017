@@ -1,6 +1,6 @@
 {-|
-Module      : mult3
-Description :  Faça uma função mult3 x que retorne True caso a entrada seja múltiplo de 3 e False caso contrário.
+Module      : findRange
+Description :  Faça um programa que retorne True caso a entrada seja menor que -1 ou (maior que 1 E múltiplo de 2), e False caso contrário.
 Copyright   : (c) Iara Miranda, 2017
 License     : GPL-3
 Maintainer  : iara.miranda@ufabc.edu.br

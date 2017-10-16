@@ -8,8 +8,8 @@ Maintainer  : iara.miranda@ufabc.edu.br
 
 
 -}
-
-module Main where
+import Data.Time.Clock
+import Data.Time.Calendar
 
 takeNFirstLeaps :: Integer -> Integer -> Int -> [Integer]
 takeNFirstLeaps startYear dueYear n = nleapYears
@@ -18,6 +18,10 @@ takeNFirstLeaps startYear dueYear n = nleapYears
     leapYears = filter (\year ->  leapYear year) [startYear .. dueYear]
     nleapYears = take n leapYears
 
-main :: IO ()
+date :: IO (Integer,Int,Int) -- :: (year,month,day)
+date = getCurrentTime >>= return . toGregorian . utctDay
+
+
 main = do
-  print (takeNFirstLeaps 1 2017 10)
+  (year, month, day) <- date
+  print (takeNFirstLeaps 1 year 10)

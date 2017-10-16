@@ -8,8 +8,8 @@ Maintainer  : iara.miranda@ufabc.edu.br
 
 
 -}
-
-module Main where
+import Data.Time.Clock
+import Data.Time.Calendar
 
 splitAtHalfLeapYears :: Integer -> Integer -> ([Integer], [Integer])
 splitAtHalfLeapYears startYear dueYear = splitAtHalf
@@ -18,6 +18,9 @@ splitAtHalfLeapYears startYear dueYear = splitAtHalf
     leapYears = filter (\year ->  leapYear year) [startYear .. dueYear]
     splitAtHalf = splitAt ((length leapYears) `div` 2) leapYears
 
-main :: IO ()
+date :: IO (Integer,Int,Int) -- :: (year,month,day)
+date = getCurrentTime >>= return . toGregorian . utctDay
+
 main = do
+  (year, month, day) <- date
   print (splitAtHalfLeapYears 1 2017)
