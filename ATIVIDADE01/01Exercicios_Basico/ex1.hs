@@ -1,6 +1,6 @@
 {-|
-Module      : mult3
-Description :  Faça uma função mult3 x que retorne True caso a entrada seja múltiplo de 3 e False caso contrário.
+Module      :
+Description :  Execute as seguintes operações utilizando o menor número de parênteses
 Copyright   : (c) Iara Miranda, 2017
 License     : GPL-3
 Maintainer  : iara.miranda@ufabc.edu.br
@@ -8,11 +8,7 @@ Maintainer  : iara.miranda@ufabc.edu.br
 
 -}
 
-module Main where
-
-mult3 :: Integer -> Bool
-mult3 x = x `mod` 3 == 0
-
-main :: IO ()
 main = do
-  print (mult3 2)
+  print (2 * 3 + 5)
+  print (2 + 2 * 3 + 1)
+  print (3 ^ 4 + 5 * 2 ^ 5 + 1)
