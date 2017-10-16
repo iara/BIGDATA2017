@@ -1,5 +1,5 @@
 {-|
-Module      : ehPrimo
+Module      : projectEuler5
 Description : Implemente uma função que faz a multiplicação etíope entre dois números.
 License     : GPL-3
 Maintainer  : iara.miranda@ufabc.edu.br
