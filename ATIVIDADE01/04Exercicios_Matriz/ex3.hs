@@ -1,20 +1,22 @@
 {-|
-Module      : ehPrimo
-Description : Implemente uma função que faz a multiplicação etíope entre dois números.
+Module      : sumDiagonalReverse
+Description : Faça uma função que calcule a soma da diagonal secundária de uma matriz.
 License     : GPL-3
 Maintainer  : iara.miranda@ufabc.edu.br
 
 
 -}
 
-divisivel20 :: Integer -> Bool
-divisivel20 y = result
-  where
-    div20 = map(y `mod`)[1..20]
-    result = foldr (+) 0 div20 == 0
+mainDiagonal :: [[a]] -> [a]
+mainDiagonal []     = []
+mainDiagonal (x:xs) = head x : mainDiagonal (map tail xs)
 
-projectEuler5 :: Integer
-projectEuler5 = last (takeWhile (\x -> divisivel20 x == False) [1..]) + 1
+reverseList :: [[a]] -> [[a]]
+reverseList [] = []
+reverseList (x:xs) = reverseList xs ++ [x]
+
+
+sumDiagonalReverse m = sum (mainDiagonal (reverseList m))
 
 main = do
-    print(projectEuler5)
+    print(sumDiagonalReverse [[1, 2, 4], [1, 1, 3], [1,2,3]] )
