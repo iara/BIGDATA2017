@@ -6,14 +6,14 @@ Maintainer  : iara.miranda@ufabc.edu.br
 
 -}
 
-module Main where
+digs :: Integral x => x -> [x]
+digs 0 = []
+digs x = digs (x `div` 10) ++ [x `mod` 10]
 
-somaDigitos :: Int -> Int -> Int -> Int
-somaDigitos 0 soma quantidade = quantidade
-somaDigitos n soma = somaDigitos (n `div` 10) (soma + (n `rem` 10))(quantidade + 1)
-
---persistenciaAditiva :: Int -> Int -> Int
---persistenciaAditiva n m = n + m
+persistenciaAditiva :: Int -> Int
+persistenciaAditiva i
+  | i < 10 =  i
+  | otherwise = persistenciaAditiva (sum (digs i))
 
 main = do
-  print (somaDigitos 12345 0 0) -- 10
+  print (persistenciaAditiva 12345) -- 6
